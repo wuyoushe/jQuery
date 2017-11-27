@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+		//$.ajax(json对象)
+		//url,type,data,async是否异步请求，默认异步
+		//cache浏览器是否缓存
+		//contentType:当将数据发送到服务器时，使用该内容类型的默认值是
+		//"application/x-www-form-urlencoded;charset=UTF-8"
+		//dataType:期待服务器返回的数据类型
+		//beforeSend:发送请求之前执行的函数
+		//complete:请求完成执行的函数（请求完成不代表成功)
+		//success(data,successType,XHR),服务器正确响应的回调函数
+		//error(XHR,errorType),失败的回调函数
+		$(function(){
+			$.ajax({
+				url:'ajax.php',
+				type:'GET',
+				data:'goods_name=诺基亚&shop_price=1500',
+				cache:false,
+				contentType:"text/html;charset=UTF-8",
+				dataType:'json',
+				beforeSend:function(){
+					$('<p>正在加载中...</p>').appendTo('#div1');
+				},
+				complete:function(){
+					$('#div1 p').remove();
+				},
+				success:function(data,textStatus,XHR){
+					console.log('success');
+					console.log(data);
+					console.log(textStatus);
+					console.log(XHR);
+
+				},
+				error:function(msg,status){
+					console.log('error');
+					console.log(msg);
+					console.log(status);
+				}
+			})
+		})
+	</script>
+</head>
+<body>
+	<div id="div1">
+		
+	</div>
+</body>
+</html>

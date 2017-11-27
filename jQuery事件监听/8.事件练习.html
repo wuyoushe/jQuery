@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		*{margin:0;padding: 0}
+		li{float: left;margin-left:10px;border:1px solid #666;list-style: none;}
+	</style>
+	<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			//给a标签绑定鼠标移入、移出行为
+			$('a')
+			.hover(function(){
+				//鼠标移入创建大图，大图的src地址就是a标签的href属性
+				//console.log($(this));[a]
+				var href=$(this).attr('href');
+				$('<img src="'+href+'">').css("position","absolute").appendTo($(this).parent());
+			},function(){
+				//父节点删除子节点
+				$(this).next().remove();
+			})
+			.mousemove(function(event){
+				// console.log(event.clientX);
+				// console.log(event.clientY);
+
+				$(this).next().css({left:event.clientX+5+'px',top:event.clientY+5+'px'})
+			})
+		})
+	</script>
+</head>
+<body>
+	<ul>
+		<li>
+			<a href="img/apple_1_bigger.jpg">
+				<img src="img/apple_1.jpg">				
+			</a>
+
+		</li>
+		<li>
+			<a href="img/apple_2_bigger.jpg">
+				<img src="img/apple_2.jpg">
+			</a>
+		</li>
+		<li>
+			<a href="img/apple_3_bigger.jpg">
+				<img src="img/apple_3.jpg">
+			</a>
+		</li>
+		<li>
+			<a href="img/apple_4_bigger.jpg">
+				<img src="img/apple_4.jpg">
+			</a>
+		</li>
+	</ul>
+</body>
+</html>

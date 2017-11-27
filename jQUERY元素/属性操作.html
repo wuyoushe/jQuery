@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+		//attr(name)取得第一个匹配元元素的属性素的属性值，否则返回undefined
+		//attr(key,value)为所有匹配的元素设置一个属性值
+		//attr(properties)将一个"名/值"形式的json对象设置为所有匹配元素的属性
+		//removeAttr(name)从一个匹配的元素中删除一个属性
+		//attr(xxx)获得xxx属性的值
+		// $(document).ready(function(){
+
+		// })
+		//简写格式
+		$(function(){
+			console.log($("img").attr("src"));//js.png
+			//attr(key,value)给key属性赋值为value
+			$("img").attr("src","css3.png");
+			//attr(json对象)给多个属性赋值
+			$("img").attr({width:"100px",height:"100px"});
+			//removeAttr(attr);删除属性的值
+			$(":submit").removeAttr("disabled");
+		})
+		
+	</script>
+</head>
+<body>
+	<img src="js.png">
+	<input type="submit" value="提交" disabled>
+</body>
+</html>

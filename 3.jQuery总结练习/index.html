@@ -1,0 +1,247 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="css/index.css">
+		<link rel="stylesheet" type="text/css" href="css/skin_0.css" id="cssStyle">
+		<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+		<style type="text/css">
+			.latest{height:150px;overflow: hidden;}
+			.latest li{line-height: 32px}
+		</style>
+		<script type="text/javascript">
+			$(function(){
+				//切换皮肤
+				//找到对应的li标签点击时添加上class="selected"属性同时删除其他标签的selected属性
+				$("#head li").click(function(){
+					$(this).addClass('selected').siblings().removeClass('selected');
+					//再找到每个颜色对应的css文件
+					//每个li标签的class属性就是颜色文件名
+					//attr(name)取得第一个匹配元素的属性值，否则返回undefined
+					
+					var fileName = $(this).attr('class').replace(' selected','');
+					$('#cssStyle').attr('href','css/'+fileName+'.css');
+					console.log(fileName);
+				})
+				//折叠菜单
+				$('#left .fenlei a').click(function(){
+					//next()查找紧跟当前节点后面的同辈节点
+					if($(this).next().is(":visible")){
+						$(this).next().slideUp();
+						$(this).css("background","url(./img/treeview-collapsed.gif) no-repeat");
+					}else{
+						$(this).next().slideDown();
+						$(this).css("background","url(./img/treeview-expanded.gif) no-repeat");
+					}
+					return false;
+				})
+
+
+			})
+		</script>
+	</head>
+	<body>
+		<div id="zhengti">
+			<div id="head">
+				<h2>我的商城,我做主</h2>
+				<ul>
+					<li class="skin_0 selected"></li>
+					<li class="skin_1"></li>
+					<li class="skin_2"></li>
+					<li class="skin_3"></li>
+					<li class="skin_4"></li>
+					<li class="skin_5"></li>
+				</ul>
+			</div>
+			<div id="daohang">				
+				<ul>
+					<li>
+						<a href="">首页</a>
+					</li>
+					<li>
+						<a href="">衬衣</a>
+						<ul>
+							<li>
+								<a href="">长袖衬衣</a>
+							</li>
+							<li>
+								<a href="">短袖衬衣</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="">卫衣</a>
+						<ul>
+							<li>
+								<a href="">开襟卫衣</a>
+							</li>
+							<li>
+								<a href="">套头卫衣</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="">裤子</a>
+						<ul>
+							<li>
+								<a href="">短裤</a>
+							</li>
+							<li>
+								<a href="">长裤</a>
+							</li>
+							<li>
+								<a href="">牛仔裤</a>
+							</li>
+							<li>
+								<a href="">条儿荣裤子</a>
+							</li>
+						</ul>	
+					</li>
+					<li>
+						<a href="">联系我们</a>
+					</li>
+				</ul>
+			</div>
+			<div id="neirong">
+				<div id="left">
+					<div class="latest title">
+						<h3>最新动态</h3>
+						<img src="img/down.gif">
+						<ul>
+							<li><a href="">春装四季装百搭小马甲不到50元.</a></li>
+							<li><a href="">夏装四季装百搭小马甲不到50元.</a></li>
+							<li><a href="">秋装四季装百搭小马甲不到50元.</a></li>
+							<li><a href="">冬装四季装百搭小马甲不到50元.</a></li>
+						</ul>
+					</div>
+					<div class="fenlei title">
+						<h3>产品分类</h3>
+						<img src="img/down.gif">
+						<ul>
+							<li>
+								<a href="">衬衫</a>
+								<ul>
+									<li><a href="">长袖衬衫</a></li>
+									<li><a href="">短袖衬衫</a></li>
+									<li><a href="">无袖衬衫</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="">卫衣</a>
+								<ul>
+									<li><a href="">套头卫衣</a></li>
+									<li><a href="">开襟卫衣</a></li>									
+								</ul>
+							</li>
+							<li>
+								<a href="">裤子</a>
+								<ul>
+									<li><a href="">长裤</a></li>
+									<li><a href="">短裤</a></li>
+									<li><a href="">牛仔裤</a></li>
+									<li><a href="">条儿荣裤子</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="">裙子</a>
+								<ul>
+									<li><a href="">短裙</a></li>
+									<li><a href="">长裙</a></li>
+									<li><a href="">连衣裙</a></li>
+									<li><a href="">背带裙</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div id="right">
+					<div class="banner">
+						<img src="img/new.jpg">
+						<ul>
+							<li>1</li>
+							<li>2</li>
+							<li>3</li>
+							<li>4</li>
+							<li>5</li>
+						</ul>
+					</div>
+					
+					<div class="new">
+						<h3>新品上市</h3>
+						<div>
+							<img src="img/left.gif">
+							<img src="img/right.gif">
+						</div>
+						<ul>
+							<li>
+								<a href="">
+									<img src="img/img_1.jpg">
+									<span>免烫高支棉衬衣</span>
+									<span>120.00</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<img src="img/img_1.jpg">
+									<span>免烫高支棉衬衣</span>
+									<span>120.00</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<img src="img/img_1.jpg">
+									<span>免烫高支棉衬衣</span>
+									<span>120.00</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<img src="img/img_1.jpg">
+									<span>免烫高支棉衬衣</span>
+									<span>120.00</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="new">
+						<h3>热销产品</h3>
+						<div>
+							<img src="img/left.gif">
+							<img src="img/right.gif">
+						</div>
+						<ul>
+							<li>
+								<a href="">
+									<img src="img/img_1.jpg">
+									<span>免烫高支棉衬衣</span>
+									<span>120.00</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<img src="img/img_1.jpg">
+									<span>免烫高支棉衬衣</span>
+									<span>120.00</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<img src="img/img_1.jpg">
+									<span>免烫高支棉衬衣</span>
+									<span>120.00</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<img src="img/img_1.jpg">
+									<span>免烫高支棉衬衣</span>
+									<span>120.00</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div id="foot"></div>
+		</div>
+	</body>
+</html>

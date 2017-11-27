@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		*{margin:0;padding: 0}
+		body{font-size: 14px}
+		a{text-decoration: none;}
+		li{list-style: none;}
+		.box{width:595px;margin:20px auto;border:1px solid #ccc;height:200px;overflow: hidden;}
+		.box .head{background: url(img/btn_cartoon.gif) no-repeat 0 0;height:35px;}
+		.box h2{background: url(img/btn_cartoon.gif) no-repeat 0 -100px;width:100px;height:35px;float: left}
+		.box ul{float:left;margin-top: 14px}
+		.head ul li{float: left;width:10px;height:10px;margin-left: 10px;background: url(img/btn_cartoon.gif) 0px -320px}
+		.box ul li.current{background: url(img/btn_cartoon.gif) no-repeat 0 -220px}
+		.box .tips{float:left;margin-top:7px;margin-left:20px;}
+		.box .tips span{width:30px;height:23px;display: block;float:left;}
+		.box .tips .prev{background: url(img/btn_cartoon.gif) 0 -400px;cursor: pointer;}
+		.box .tips .next{background: url(img/btn_cartoon.gif) -30px -400px;cursor: pointer;}
+		.head em{float:left;}
+
+		.content{position: relative;}
+		.content ul{width:2320px;position: absolute;}
+		.content ul li{float: left;width:130px;margin-left:15px;height:130px;text-align: center;}
+		.content li img{width:128px;height:96px;}
+	</style>
+	<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var oLis=$('.content ul').children("li");
+			//当前有多少页
+			var page=Math.ceil(oLis.length/4);
+			//当前是第几页
+			var now=1;
+			//点击上一页
+			var contentWidth=$('.content ul').width();
+			$(".prev").click(function(){
+				if(now>=4)
+				{
+					//stop(true,true)清除队列，执行的动画立即回到终点
+					$('.content ul').stop(true,true).animate({left:0},2000);
+					now=1;
+				}else{
+					$('.content ul').stop(true,true).animate({left:"-="+contentWidth/4},2000);
+					now++;
+				}
+				//找到当前对应的小圆点,添加class属性，其他的兄弟节点删除class属性
+				$('.head li').eq(now-1).addClass('current').siblings().removeClass('current');
+			});
+			$(".next").click(function(){
+				if(now<=1)
+				{
+					$('.content ul').stop(true,true).animate({left:0},2000);
+					now=1;
+				}else{
+					$('.content ul').stop(true,true).animate({left:"+="+contentWidth/4},2000);
+					now--;
+				}
+				$('.head li').eq(now-1).addClass('current').siblings().removeClass('current');
+			});
+		})
+		
+	</script>
+</head>
+<body>
+	<div class="box">
+		<div class="head">
+			<h2></h2>
+			<ul>
+				<li class="current"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+			<div class="tips">
+				<span class="prev"></span>
+				<span class="next"></span>
+			</div>			
+		</div>
+		<div class="content">
+			<ul>
+				<li>
+					<a href=""><img src="img/01.jpg"></a>
+					<h5>海贼王</h5>
+					<span>播放:<em>12,346</em></span>
+				</li>
+				<li>
+					<a href=""><img src="img/01.jpg"></a>
+					<h5>海贼王</h5>
+					<span>播放:<em>12,346</em></span>
+				</li>
+				<li>
+					<a href=""><img src="img/01.jpg"></a>
+					<h5>海贼王</h5>
+					<span>播放:<em>12,346</em></span>
+				</li>
+				<li>
+					<a href=""><img src="img/01.jpg"></a>
+					<h5>海贼王</h5>
+					<span>播放:<em>12,346</em></span>
+				</li>
+
+				<li>
+					<a href=""><img src="img/02.jpg"></a>
+					<h5>圣斗士星矢</h5>
+					<span>播放:<em>12,346</em></span>
+				</li>
+				<li>
+					<a href=""><img src="img/02.jpg"></a>
+					<h5>圣斗士星矢</h5>
+					<span>播放:<em>12,346</em></span>
+				</li>
+				<li>
+					<a href=""><img src="img/02.jpg"></a>
+					<h5>圣斗士星矢</h5>
+					<span>播放:<em>12,346</em></span>
+				</li>
+				<li>
+					<a href=""><img src="img/02.jpg"></a>
+					<h5>圣斗士星矢</h5>
+					<span>播放:<em>12,346</em></span>
+				</li>
+
+				<li>
+					<a href=""><img src="img/03.jpg"></a>
+					<h5>火影忍者</h5>
+					<span>播放:<em>12,346</em></span>
+				</li>
+				<li>
+					<a href=""><img src="img/03.jpg"></a>
+					<h5>火影忍者</h5>
+					<span>播放:<em>12,346</em></span>
+				</li>
+				<li>
+					<a href=""><img src="img/03.jpg"></a>
+					<h5>火影忍者</h5>
+					<span>播放:<em>12,346</em></span>
+				</li>
+				<li>
+					<a href=""><img src="img/03.jpg"></a>
+					<h5>火影忍者</h5>
+					<span>播放:<em>12,346</em></span>
+				</li>
+
+				<li>
+					<a href=""><img src="img/04.jpg"></a>
+					<h5>龙珠</h5>
+					<span>播放:<em>12,346</em></span>
+				</li>
+				<li>
+					<a href=""><img src="img/04.jpg"></a>
+					<h5>龙珠</h5>
+					<span>播放:<em>12,346</em></span>
+				</li>
+				<li>
+					<a href=""><img src="img/04.jpg"></a>
+					<h5>龙珠</h5>
+					<span>播放:<em>12,346</em></span>
+				</li>
+				<li>
+					<a href=""><img src="img/04.jpg"></a>
+					<h5>龙珠</h5>
+					<span>播放:<em>12,346</em></span>
+				</li>
+			</ul>
+
+		</div>
+	</div>
+</body>
+</html>

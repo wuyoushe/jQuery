@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#div1{width:200px;height:200px;border:1px solid red;}
+	</style>
+	<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			//$.param()将json对象序列化成字符串
+			var obj={name:"zhangsan",hobby:"篮球"};
+			var str=$.param(obj);
+			console.log(obj);
+			console.log(str);
+			//$.parseJSON将json字符串解析成json对象，性能比eval()高
+		})
+	</script>
+</head>
+<body>
+
+</body>
+</html>

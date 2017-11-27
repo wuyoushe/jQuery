@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#div1{width:200px;height:200px;border:1px solid red;}
+	</style>
+	<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+		function skill(){
+			console.log('我熟练掌握了js和jquery');
+		}
+		var hero={
+			name:"英雄",
+			skill:function(time){
+				console.log(this.name+'在'+time+'熟练掌握了js和jquery');
+			}
+		}
+		//1,将对象的方法赋值给对象身上
+		var beauty={
+			name:"貂蝉"
+		}
+		//call,apply将方法应用到对象身上，区别apply传参是以数组的方式传递
+		hero.skill.call(beauty,2017);
+		hero.skill.apply(beauty,[2017]);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

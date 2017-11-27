@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#div1{border:1px solid black;width:200px;height:200px;}
+	</style>
+	<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			//append()，父元素主动追加子节点
+			//$("div").append("<a href='http://www.baidu.com'>超链接</a>");
+			//prepend()父节点主动追加子节点，把子节点放到前面
+			//$("div").prepend("<a href='http://www.baidu.com'>超链接</a>");
+			//appendTo()子节点主动追加到父节点上，参数是选择器
+			//$("<a href='http://baidu.com'>超链接</a>").appendTo("#div1");
+			//prependTo()子节点主动追加到父节点，参数是选择器
+			//$("<a href='http://baidu.com'>超链接</a>").prependTo("#div1");
+			//insertBefore()在当前元素的前面插入新的节点（在选的元素的外面）
+			//$("<a href='http://baidu.com'>超链接</a>").insertBefore('#div1');
+			$("<a href='http://baidu.com'>超链接</a>").insertAfter('#div1');
+		})
+	</script>
+</head>
+<body>
+	<div id="div1">
+		<p>这是一个段落</p>
+	</div>
+</body>
+</html>

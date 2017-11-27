@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{margin:0;padding:0;}
+		#div1{width:300px;height:200px;margin:100px auot;}
+		h5{background: green;height:30px;line-height: 30px;text-align:center;color:#fff;}
+		p{display: none;border:1px solid red;}
+	</style>
+	<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$("h5")
+			// 
+			.click(function(){
+				$('p').slideToggle(1500,function(){
+					alert('success');
+				})		
+			})
+		})
+	</script>
+</head>
+<body>
+	<div id="div1">
+		<h5>jQuery是什么</h5>
+		<p>jQuery是继prototype之后又一个非常强大的javascript库，凭借其简洁的的语法，强大的dom操作，选择器,事件处理，动画，ajax等操作极大的减轻了程序员的开发工作，让程序员将主要精力集中到项目的逻辑中去</p>
+	</div>
+</body>
+</html>

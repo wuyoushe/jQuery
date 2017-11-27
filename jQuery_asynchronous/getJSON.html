@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+		//$.getJSON()直接读取服务器端的json文件或服务器直接返回的是json
+		//数据
+		$(function(){
+			$.getJSON(
+				'data.json',
+				'',
+				function(data){
+					$('#div1').html(data.name+'---'+data.age);
+				}
+				);
+		})
+	</script>
+</head>
+<body>
+	<div id="div1">
+		
+	</div>
+</body>
+</html>

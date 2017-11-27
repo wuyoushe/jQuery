@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#div1{border:1px solid black;width:200px;height:200px;}
+	</style>
+	<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			//wrap(element)使用element标签包裹指定的标签
+			//wrapAll(element)使用element标签将所有的标签包裹起来
+			//$('li').wrap('<p></p>');
+			$('li').wrapAll('<p></p>');
+		})
+	</script>
+</head>
+<body>
+	<ul>
+		<li>橘子</li>
+		<li>苹果</li>
+		<li>梨</li>
+	</ul>
+</body>
+</html>

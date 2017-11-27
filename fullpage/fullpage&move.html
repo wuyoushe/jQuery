@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	
+	<script src="jquery-1.8.3.min.js"></script>
+	<script src="jquery.fullPage.min.js"></script>
+
+
+	<link rel="stylesheet" href="css/jquery.fullPage.css">
+	<style type="text/css">
+		*{margin:0;padding:0;}
+		body{font:16px/1.8 "Microsoft Yahei";}
+		.section{
+			position: relative;
+			background-color: #fff;
+			overflow: hidden;
+			text-align: center;			
+		}
+		.section1{
+			background: url("img/banner.jpg") no-repeat center top;
+		}
+		.section1 h1{
+			margin-top: 10%;
+			color:#fff;
+			font-weight: normal;
+			font-size: 50px;
+			opacity: 0.8;
+			transform:scale(0)
+		}
+		.section1 p{
+			margin:5% auto 0;
+			color:#fff;
+			font-size: 18px;
+			width:60%;
+			opacity: 0.6;
+			margin-top: 800px;
+		}
+		.section1 a{
+			display: block;
+			margin:5% auto 0;
+			color: #ff9000;
+			font-size: 18px;
+			opacity: 0.9
+		}
+		.section2{
+			position: relative;
+			background-size: 100%
+		}
+		.section2 div{
+			position: absolute;
+			/*top:36%;*/
+			bottom:-30%;
+			width:100%;			
+		}
+		.section2 p{
+			font-family: Microsoft YaHei;
+			font-size: 18px;
+    		line-height: 45px;
+		}
+		.section2 h1{
+			/*margin: 20px auto;*/
+			margin:-300px auto;
+			color:#333;
+			font-weight: normal;
+			font-size: 80px;
+		}
+		.section2 a{
+			display: block;
+			position: absolute;
+			bottom: 10%;
+			left:50%;
+			color:#08c;
+			font-size: 18px;
+			margin-left:-20px;
+		}
+		.section3{
+			background: #f2f2f2 url("img/expert.jpg") no-repeat center 300px;
+			background-size: 100%;
+			background-color: rgb(247,249,248);
+		} 
+		.section3 h1{
+			margin:20px auto;
+			color:#333;
+			font-weight: normal;
+			font-size: 40px;
+			width:60%;
+			margin-left: -1500px;
+		}
+		.section3 div{
+			margin:20px auto 0;
+			color:#333;
+			font-size: 18px;
+			width:60%;
+			margin-left: 1500px;		
+		}
+		.section3 a{
+			display: block;
+			margin:20px auto 0;
+			color:#08c;
+			font-size: 18px;
+		}
+		.section4{
+			background:#fff;
+		}
+		.section4 h1{
+			margin: 20px auto;
+			color: #333;
+			font-weight: normal;
+			font-size: 40px;
+		}
+		.section4 .row{
+			width:95%;
+			margin-left: 20px;
+			color:#333;
+			font-size: 18px;
+		}
+		.section4 .row .column{
+			float: left;
+			display: inline-block;
+			width: 31%;
+			margin:10px;
+			padding-bottom: 30px;
+			background-color: #f2f2f2;
+		}
+		.section4 .column img{
+			height: 300px;
+			margin-top: 30px;			
+		}
+		.section4 .column h4{
+			margin:20px auto;
+		}
+		.section4 .column h4.primary{
+			background-image: url("img/5.png");
+			background-size: 190px 22px;
+			height: 22px;
+			width:190px;
+		}
+		.section4 .column h4.sport{
+			background-image: url("img/6.png");
+			background-size: 178px 22px;
+			height: 22px;
+			width:178px;
+		}
+		.section4 .column h4.edition{
+			background-image: url("img/7.png");
+			background-size: 190px 22px;
+			height: 22px;
+			width:190px;
+		}
+		.section4 .column h4{
+			background-size: 102px 22px;
+			height: 22px;
+			width: 102px;
+		}
+		.section4 .column p{
+			margin:10px auto;
+			width: 90%;
+			font-size: 16px;
+		}
+		.section4 .column a{
+			display: block;
+			margin:10px auto 0;
+			color: #08c;
+			font-size: 16px
+		}
+
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			$('#fullPage').fullpage({
+				verticalCentered:false,
+				anchors:['page1','page2','page3','page4'],
+				//是否显示导航
+				navigation:true,
+				//每一个导航显示的提示字符
+				navigationTooltips:['美 · 让您更尊贵','公司介绍','专家团队','医院环境'],
+				//回调函数
+				//滚动到某一屏的回调函数
+				//参数1：滚动到某一屏的锚链接
+				//参数2：滚动到某一屏的索引
+				afterLoad:function(link,index){
+					switch(index){
+					case 1:
+					move('.section1 h1').scale(1).duration('1.5s').end();
+					move('.section1 p').set('margin-top','5%').duration('1.5s').end();
+					break;
+					case 2:
+					move('.section2 h1').set('margin-top','20px').duration('1.5').end();
+					move('.section2 div').set('bottom','30%').duration('1.5s').end();
+					break;
+					case 4:
+					move('.section4 .primary').rotate(360).duration('1s').end(function(){
+						move('.section4 .sport').rotate(360).duration('1s').end(function(){
+							move('.section4 .edition').rotate(360).duration('1s').end(function(){
+								move('.section4 h4.primary').scale(1.4).duration('1.5s').end(function(){
+									move('.section4 h4.sport').scale(1.4).duration('1.5s').end(function(){
+										move('.section4 h4.edition').scale(1.4).duration('1.5s').end();
+									});
+								});
+							});
+						});
+					});
+					break;
+				}
+			},
+				afterRender:function(){
+		    		move('.section1 h1').scale(1).duration('1.5s').end();
+		    		move('.section1 p').set('margin-top','5%').duration('1.5').end();
+		    	}
+			});
+		})
+	</script>
+</head>
+<body>
+	<div id="fullPage">
+		<div class="section section1">
+			<h1>美 · 让您更尊贵</h1>
+			<p>这是段落，这是段落，这是段落，这是段落，这是段落，这是段落，这是段落，这是段落，这是段落，这是段落，这是段落，这是段落，这是段落，这是段落，这是段落，这是段落，这是段落，这是段落</p>
+			<a href="">查看详情</a>
+		</div>
+		<div class="section section2">
+			<h1>北京叶子整形美容医院</h1>
+			<div>始创于2007年
+				<p>始终秉承诚信、有爱和良父义务精神及“做中国最好的整形美容医院”的品牌愿景，</p>
+				<p>以顾客满意度为宗旨，接轨国际医疗标准，勇担行业自律先锋，全力打造高品质医疗服务体系，</p>
+				<p>更屡获“公众信赖品牌医院”称号并成为卫生部全国示范推广单位。</p>
+				<p>北京叶子始终注重品牌发展与专业医美精神的共融并济，</p>
+				<p>与美同行，塑美于世。</p>
+			</div>
+			<a href="">查看详情</a>
+		</div>
+		<div class="section section3">
+			<h1>专家团队</h1>
+			<div>
+				<p>整形外科是艺术化的医学，在这座殿堂中的追求永无止境</p>
+				<p>美丽是世间最动人的音符，我们愿为您奏响最美的乐章</p>
+			</div>
+			<a href="">进一步了解</a>
+		</div>
+		<div class="section section4">
+			<h1>医院环境</h1>
+			<div class="row">
+				<div class="column">
+					<img src="img/r1.jpg" class="primary">
+					<h4 class="primary"></h4>
+					<div class="intro">
+						<a href="">进一步了解呀</a>
+					</div>
+				</div>
+				<div class="column">
+					<img src="img/r2.jpg" class="sport">
+					<h4 class="sport"></h4>
+					<div class="intro">
+						<a href="">进一步了解呀</a>
+					</div>
+				</div>
+				<div class="column">
+					<img src="img/r3.jpg" class="edition">
+					<h4 class="edition"></h4>
+					<div class="intro">
+						<a href="">进一步了解呀</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="move.js"></script>
+</body>
+</html>

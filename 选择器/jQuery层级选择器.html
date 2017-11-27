@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		//后代元素选择器，查找某个节点的后代
+		$("ul li").css("color","red");
+		//子元素选择器
+		$("ul>li>ul").css("display","none");
+		//元素后面的同辈元素，查找id=p1后面的同辈元素
+		$('#p1~p').css("color","red");
+		//相邻的兄弟选择器，后面的一个兄弟元素
+		$("#p1+p").css("color","green");
+	})
+	</script>
+</head>
+<body>
+	<p id="p1">段落1</p>
+	<p>段落2</p>
+	<p>段落3</p>
+
+	<ul>
+		<li>
+			水果
+			<ul>
+				<li>橘子</li>
+				<li>苹果</li>
+				<li>梨</li>
+			</ul>
+		</li>
+	</ul>
+</body>
+</html>

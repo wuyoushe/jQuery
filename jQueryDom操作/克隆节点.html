@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#div1{border:1px solid black;width:200px;height:200px;}
+	</style>
+	<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			//clone()将节点赋值（克隆）一份
+			//clone(true)将节点以及节点身上的事件复制一份
+			// $("ul li").click(function(){
+			// 	//clone()将节点赋值（克隆）一份
+			// 	$(this).clone().appendTo("ul");
+			// })
+			$("ul li").click(function(){
+				$(this).clone(true).appendTo("ul");
+			})
+			
+		})
+	</script>
+</head>
+<body>
+	<ul>
+		<li>橘子</li>
+		<li>苹果</li>
+		<li>梨</li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	</style>
+	<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			//eq(index) 过滤索引等于Index的节点
+			$("ul li").eq(1).css("color","red");
+			//first()过滤出第一个节点对象
+			$("ul li").first().css("color","green");
+			//last()过滤出最后一个节点
+			$("ul li").last().css("color","orange");
+			//hasClass(class)检测是否含有class类
+			console.log($("ul li").eq(1).hasClass('red'));
+			//filter()过滤出符合表达式的节点
+			$("ul li").filter(".red").css("color","green");
+			//is(exp)检测标签是否符合exp表达式
+			console.log($(":checkbox").is(":checked"));
+			//has(element)过滤包含指定元素的节点
+			console.log($("ul li").has("ul").html());
+		})
+	</script>
+</head>
+<body>
+	<input type="checkbox" checked>篮球
+	<ul>
+		<li>橘子</li>
+		<li class="red">苹果</li>
+		<li>
+			梨
+			<ul>
+				<li>鸭梨</li>
+				<li>雪花梨</li>
+				<li>香梨</li>
+			</ul>
+		</li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div{width:100px;height:100px;border:5px solid green;}
+	</style>
+	<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			//width()读取元素的宽度
+			//width(value)设置宽度为value
+			//height()读取元素的高度
+			//height(value)设置元素的高度
+			//innerWidth()读取不包含边框的宽度
+			//innerHeight()读取不包含边框的高度
+			//outerWidth()读取包含边框的宽度
+			//outerHeight()读取包含边框的高度
+			//读取宽度，高度
+			console.log($("div").width());
+			console.log($("div").height());
+			$("div").width('200px');
+			$("div").height('200px');
+			console.log($("div").innerWidth());
+			console.log($("div").innerHeight());
+			console.log($("div").outerHeight());
+			console.log($("div").outerWidth());
+
+		})
+	</script>
+</head>
+<body>
+	<div></div>	
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+		//对象.load(url,data={},callback);
+		//参数1 请求的地址
+		//参数2：携带的数（以post方式发送到服务器）
+		//参数3：成功的回调函数
+		//1,load 方法可以直接加载一个html文件的内容到目标中
+		//2,还可以请求php文件，将Php的回应加载到目标额节点中
+		$(function(){
+			$('#div1').load('load.php',{name:"felton"},function(){
+				console.log('加载完毕');
+			});
+		})
+	</script>
+</head>
+<body>
+	<div id="div1">
+		
+	</div>
+</body>
+</html>

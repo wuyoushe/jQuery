@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{margin:0;padding:0;}
+		#parent{width:300px;height:300px;border:1px solid red;position:relative;left:50px;top:50px;}
+		#child{width:100px;height:100px;border:1px solid green;position:absolute;left:50px;top:50px;}
+		a{position:fixed;right:0;bottom:0;}
+	</style>
+	<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+		//offset()读取距离文档左边，顶部的长度
+		//position()读取距离父元素左边，顶部的长度
+		//scrollTop()读取，设置滚动条距离顶部的长度
+		$(function(){
+			console.log($("#child").offset());
+			console.log($("#child").position());
+			$(document).scroll(function(){
+				document.title=$(document).scrollTop();
+			})
+			$("a").click(function(){
+				$(document).scrollTop(0);
+			})
+		})
+	</script>
+</head>
+<body style="height:2000px">
+	<div id="parent">
+		<div id="child">
+			
+		</div>
+	</div>
+	<a href="javascript:void()">返回顶部</a>
+</body>
+</html>

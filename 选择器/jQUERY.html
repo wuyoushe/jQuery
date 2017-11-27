@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		//过滤第一个div
+		$("div:first").css("color","red");
+		//最后一个div
+		$("div:last").css("color","green");
+		//过滤出索引为1的元素，索引从0开始
+		$("div:eq(1)").css("color","orange");
+		//过滤索引为偶数的元素
+		$("div:even").css("color","red");
+		//过滤索引为奇数的元素
+		$("div:odd").css("color","green");
+		//过滤索引大于2的元素greater than
+		$("div:gt(2)").css("color","blue");
+		//过滤索引小于2的元素 less than
+		$("div:lt(2)").css("color","green");
+		//过滤所有的标题
+		$(":header").css("color","red");
+	})
+	</script>
+</head>
+<body>
+	<h2>这是一个标题2</h2>
+	<h3>这是一个标题3</h3>
+	<div>第一个div</div>
+	<div>第二个DIV</div>
+	<div>第三个DIV</div>
+	<div>第四个DIV</div>
+	<div>第五个DIV</div>
+	<div>第六个DIV</div>
+</body>
+</html>

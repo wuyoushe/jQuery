@@ -1,0 +1,75 @@
+第二章
+jQuery基本选择器
+2.2 基本选择器
+id选择器，类选择器，元素选择器，属性选择器联合选择器
+2.3 jQuery层级选择器
+层级选择器也就是有层级关系的选择器（父子选择器，兄弟姐妹选择器）
+后代选择器
+ul li
+子元素选择器
+ul>li>ul
+元素后面的同辈元素，查找id=p1后得所有同辈元素
+#p1~p
+相邻兄弟选择器，后面的一个兄弟元素+
+#p1+p
+2.4 过滤选择器
+:first 过滤第一个元素
+:last 过滤最后一个元素
+:eq(index) 过滤出索引等于index的元素
+:even过滤出索引为偶数的元素
+:odd 过滤出索引为奇数的元素
+:gt(index)过滤出索引大于index的元素
+:lt(index)过滤出索引小于index的元素
+:header 过滤出所有的h1~h6标签
+可见性过滤器
+:visible 过滤显示的元素
+:hidden 过滤不可见的元素
+子元素过滤选择器
+:nth-child(even)过滤出索引为是偶数的子元素索引值从1开始
+:nth-child(odd)过滤出索引为奇数的子元素
+:nth-child(index)匹配每个父元素下索引值为index的子元素
+:first-child  :last-child 
+表单元素选择器
+:text 过滤单行文本框
+:password 过滤密码框
+:submit 过滤提交按钮
+:radio 单选框
+表单属性
+:checked 过滤所有被选中的单选框，复选框
+:selected 过滤所有被选中的下拉列表项
+:disabled 过滤禁用的表单项
+:enable  过滤可以使用的表单项
+内容过滤选择器
+:contains(text)匹配包含给定元素的元素
+:empty()匹配不包含子元素或者文本内容的空元素
+:has(selector) 匹配含有选择器所匹配的元素的节点
+：parent 匹配本身是父元素的元素
+
+第三章
+3.1属性操作
+attr(key)取得第一个匹配元素的属性的值，没有返回undefined
+attr("key","value")为所有的匹配元素设置一个值
+attr({json})将一个属性名/值形式的json对象设置所有的匹配元素的属性
+removeAttr(name)从每一个匹配的元素中删除一个属性
+3.2内容的读取
+val()读取表单内容的值
+html()读取，设置元素的内容（包括标签）
+text()读取，设置元素的内容（不包括标签）
+3.3样式操作
+css(key,value)设置key样式的值为value
+css({json})设置多个样式的值
+addClass(class)添加一个类
+removeClass(class)删除一个类
+toggleClass(class)切换类有则删除，无则添加
+3.4位置尺寸
+width()读取元素的宽度
+width(value)设置宽度为value
+height()读取元素的高度
+height(value)设置元素的高度
+innerHeight()读取不包含边框的高度
+innerWidth()读取不包含边框的宽度
+outerHeight()读取包含边框的高度
+outerWidth()读取包含边框的宽度
+offset()读取距离文档左边，顶部的长度
+position()读取距离父元素的左边，顶部的长度
+scrollTop()读取，设置滚动条距离顶部的长度

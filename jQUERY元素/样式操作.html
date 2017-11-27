@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div{width:100px;height:100px;background: #000}
+		.red{border:3px solid red;}
+		.green{border:3px solid green;}
+	</style>
+	<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+		//css(key,value)设置key样式的值为value
+		//css(json)设置多个样式的值
+		//addClass(class)添加一个类
+		//removeClass(class)删除类
+		//toggleClass(class)，切换类，有则删除，没有则添加
+		$(function(){
+			$("div").css("background","green");
+			//css(json)设置多个样式
+			$("div").css({opacity:"0.5",border:"1px solid red"});
+			//addClass()添加一个类
+			$("div").addClass("red");
+			//删除类removeClass()
+			$("div").removeClass("red");
+		})
+	</script>
+</head>
+<body>
+	<div></div>
+	<a href="javascript:change()">切换样式</a>
+			<script type="text/javascript">
+				function change()
+				{
+					$("div").toggleClass("red");
+		}
+	</script>
+</body>
+</html>

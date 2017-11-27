@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#div1{width:100px;height:100px;background: red;display:none;}
+	</style>
+	<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		//过滤单行文本框
+		$(":text").val("请输入用户名");
+		//过滤密码框
+		$(":password").val('1234abcd');
+		//单选框，将jQuery对象转换成javascript对象
+		$(":radio:first").get(0).checked=true;
+		//$(":radio:first")[0].checked=true;
+		$("button").click(function(){
+			$(":file").click();
+		})
+	})
+	</script>
+</head>
+<body>
+	<form>
+		<p>用户名:<input type="text" name=""></p>
+		<p>密码:<input type="password" name=""></p>
+		<p>单选框:<input type="radio" name="sex">男<input type="radio" name="sex">女</p>
+		<button style="width:100px;height:30px;background: blue;">点击上传图片</button>
+		<p><input type="file" name="pic" style="display:none"></p>
+		<p><input type="submit" value="提交" name=""></p>
+	</form>
+</body>
+</html>

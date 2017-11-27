@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			//val()读取，设置表单项的值
+			//html()读取设置元素的内容（包括标签)
+			//text()读取，设置元素的文本内容,(不包含标签)
+			console.log($(":text").val());
+			$(":text").val("请输入密码");
+			$("div").html("<a href=''>超链接</a>");
+			console.log($("div").html());
+			$("div").text("超链接");
+			console.log($("div").text());
+		})
+	</script>
+</head>
+<body>
+	<input type="text" name="user" value="请输入用户名">
+	<div>
+		<p>这是一个段落</p>
+	</div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#div1{width:200px;height:200px;border:1px solid red;}
+	</style>
+	<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+	
+	<script type="text/javascript">
+		//$.trim()去除两端空格
+		//$.inArray()判断元素是否在数组中，返回索引值，找不到返回-1
+		//$.unique()去除数组的重复元素
+		//$.merge()将数组合并
+		//$.extend(对象1，对象2)将对象2的属性放到对象1中
+		$(function(){
+			var str='    zhangsan';
+			var trimStr= $.trim(str);
+			console.log(str.length);
+			console.log(trimStr.length);
+			//$.inArray()查找某个内容是否在数组中
+			var arr = [1,3,5,7,9];
+			var res = $.inArray(7,arr);
+			console.log(res);
+			//$.uinque()去除数组中的重复的元素
+			var arr = [1,3,5,7,9,3]
+			$.unique(arr);
+			console.log(arr);
+			var arr1=['张三','李四'];
+			var arr2=['篮球','足球'];
+			var res=$.merge(arr1,arr2);
+			console.log(res);
+			//$.extend()拓展
+			var obj1={
+				run:function(){
+					console.log('run...')
+				}
+			}
+			var obj2={
+				fly:function(){
+					console.log('fly...');
+				}
+			}
+			$.extend(obj1,obj2);
+			obj1.fly();
+
+		})
+	</script>
+</head>
+<body>
+	<div id="div1"></div>
+</body>
+</html>

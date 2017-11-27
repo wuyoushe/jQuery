@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#div1{width:200px;height:200px;border:1px solid red;}
+	</style>
+	<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+		function skill(){
+			console.log('我熟练掌握了js和jquery');
+		}
+		var hero={
+			name:"英雄"
+		}
+		//1,将函数赋值到对象身上
+		hero.skill=skill;
+		hero.skill();
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,108 @@
+body,div,p,span,h1,h2,h3,h4,h5,h6,a,ul,li,img{margin: 0;padding: 0}
+li{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+#zhengti{
+	width: 1200px;
+	margin: auto;
+	border: 1px solid red;
+}
+#head{
+	background: #3b5998;
+	height: 80px;
+}
+#head h2{
+	color: #fff;
+	float: left;
+	margin-top: 20px;
+	margin-left: 20px 
+}
+#head li{
+	width: 15px;
+	height: 15px;
+	float: left;
+	margin-left: 8px
+}
+#head ul{
+	float: right;
+	margin-top: 20px;
+	margin-right: 20px;
+	background: #fff;
+	width: 145px;
+}
+.skin_0{
+	background: url(../img/theme.gif) 0px -15px;
+}
+.skin_1{
+	background: url(../img/theme.gif) -20px 0px;
+}
+.skin_2{
+	background: url(../img/theme.gif) -40px 0px;
+}
+.skin_3{
+	background: url(../img/theme.gif) -60px 0px;
+}
+.skin_4{
+	background: url(../img/theme.gif) -80px 0px;
+}
+.skin_5{
+	background: url(../img/theme.gif) -100px 0px;
+}
+
+
+#daohang{
+	height: 30px;
+	background: #3b5998;
+	margin-top: 10px;
+}
+#daohang li ul{
+	display: none;
+}
+#daohang>ul>li{
+	float: left;
+	background: #eee;
+	margin-top: 5px;
+	padding: 0px 10px;
+	position: relative;
+}
+
+#daohang>ul>li:hover ul{
+	display: block;
+	position: absolute;
+	background: #fff;
+	left: 0px;
+	width: 80px
+}
+
+.left{
+	width: 300px;
+	border: 1px solid red;
+	position: relative;
+}
+.title{
+	position: relative;
+}
+.title h3{
+	background: #3b5998;	
+}
+.title img{
+	position: absolute;
+	right: 10px;
+	top: 5px
+}
+.title li{
+	line-height: 25px;
+	padding-left: 15px
+}
+
+.fenlei>ul>li>a{
+	background: url(../img/treeview-expanded.gif) no-repeat;
+	padding-left: 20px
+}
+.fenlei>ul>li>ul a{
+	background: url(../img/treeview-item.gif) no-repeat;
+	padding-left: 20px
+}

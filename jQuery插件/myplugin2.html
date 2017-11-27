@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#div1{width:100px;height:100px;border:1px solid #ccc;}
+	</style>
+	<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="myplugin2.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var options = {foreround:'red',background:"orange"};
+			$('#div1').changeColor(options);
+		})
+	</script>
+</head>
+<body>
+	<div id="div1">hello,world</div>
+</body>
+</html>

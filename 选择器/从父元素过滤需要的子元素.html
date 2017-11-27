@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#div1{width:100px;height:100px;background: red;display:none;}
+	</style>
+	<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		$("table tr:nth-child(odd)").css("background","red");
+		$("table tr:nth-child(even)").css("background","green");
+		$("table tr:nth-child(2)").css("background","orange");
+		$("table tr:first").css("background","blue");
+		//过滤父元素的最后一个子元素
+		$("table tr:last").css("background","pink");
+	})
+	</script>
+</head>
+<body>
+	<table>
+		<tr>
+			<td>第一列</td>
+			<td>第二列</td>
+		</tr>
+
+		<tr>
+			<td>第一列</td>
+			<td>第二列</td>
+		</tr>
+
+		<tr>
+			<td>第一列</td>
+			<td>第二列</td>
+		</tr>
+
+		<tr>
+			<td>第一列</td>
+			<td>第二列</td>
+		</tr>
+
+		<tr>
+			<td>第一列</td>
+			<td>第二列</td>
+		</tr>
+
+		<tr>
+			<td>第一列</td>
+			<td>第二列</td>
+		</tr>
+	</table>
+</body>
+</html>

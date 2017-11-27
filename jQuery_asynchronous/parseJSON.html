@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+		//$.parseJSON()将json字符串解析成json对象
+		$(function(){
+			$.get(
+				'post.php',
+				'',
+				function(data){
+					console.log(data);
+					console.log(typeof(data));
+					var result=$.parseJSON(data);
+					console.log(result);
+				},
+				'text'
+				);
+		})
+	</script>
+</head>
+<body>
+	<div id="div1">
+		
+	</div>
+</body>
+</html>

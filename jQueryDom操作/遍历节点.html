@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#div1{border:1px solid black;width:200px;height:200px;}
+	</style>
+	<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			//数组.each(callback)遍历数组并将下标赋值给k,值赋值给v
+			//$.each(arr.callback)遍历数组并将下标赋值给k,值赋值给v
+			 var oLis=$('ul').children();
+			// oList.each(function(K,V){
+			// 	console.log(K);
+			// 	console.log(V);
+			// });
+			//$.each(arr.callback)
+			$.each(oLis,function(key,item){
+				console.log(key);
+				console.log(item);
+			})
+		})
+	</script>
+</head>
+<body>
+	<ul>
+		<li class="peach">猕猴桃</li>
+		<li class="water">西瓜</li>
+		<li class="grape">葡萄</li>
+		<li class="liu">榴莲</li>
+		<li class="bo">菠萝</li>
+	</ul>
+</body>
+</html>
